@@ -1,2 +1,3 @@
 manoj's section of code
-membership.java inserts only image
+
+membership.java contains the admin login ui
