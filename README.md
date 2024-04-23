@@ -12,3 +12,6 @@ create table Customer(name varchar(30),phoneNo varchar(11) primary key,points in
 
 Cashier
 create table Cashier(id int primary key,username varchar(20) unique,password varchar(20),cname varchar(30));
+
+
+complete admin operations by this sunday pls
