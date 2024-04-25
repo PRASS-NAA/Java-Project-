@@ -15,3 +15,4 @@ create table Cashier(id int primary key,username varchar(20) unique,password var
 
 
 complete admin operations by this sunday pls
+login over
