@@ -1,0 +1,201 @@
+package org.example;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import static java.awt.Color.white;
+
+class updatecashie extends JFrame {
+
+    JTextField id = new JTextField();
+    JPanel panel = new JPanel();
+
+
+    updatecashie() {
+
+
+        JLabel label = new JLabel();
+        label.setIcon(new ImageIcon(new ImageIcon("C:\\wp\\1686249416_en-idei-club-p-light-blue-color-background-dizain-krasivo-6.jpg").getImage().getScaledInstance(1550, 900, Image.SCALE_SMOOTH)));
+        setContentPane(label);
+        this.setVisible(true);
+        this.setSize(1600, 1600);
+        this.setTitle("UPDATE CASHIER");
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setResizable(false);
+        setLayout(null);
+
+        JPanel panel1 = new JPanel();
+        add(panel1);
+        panel1.setBounds(512, 50, 500, 200);
+        panel1.setBackground(new Color(55, 55, 55,200));
+        panel1.setLayout(null);
+        JLabel lab= new JLabel("ID");
+        panel1.add(lab);
+        lab.setBounds(240,0,500,30);
+        lab.setBackground(new Color(182, 223, 248));
+        lab.setOpaque(true);
+        lab.setForeground(new Color(0,0,128));
+        JLabel lab1 =new JLabel(".");
+        panel1.add(lab1);
+        lab1.setBounds(0,0,300,30);
+        lab1.setBackground(new Color(182, 223, 248));
+        lab1.setFont(new Font("ariel",Font.BOLD,0));
+        lab.setFont(new Font("ariel",Font.BOLD,20));
+
+
+        lab1.setOpaque(true);
+
+
+        JLabel idd = new JLabel("CASHIER ID:");
+        idd.setForeground(new Color(182, 223, 248));
+        idd.setFont(new Font("ariel",Font.BOLD,20));
+        panel1.add(idd);
+        idd.setBounds(30, 70, 150, 25);
+
+        id = new JTextField();
+        id.setBackground(new Color(182, 223, 248));
+        id.setForeground(new Color(0,0,128));
+        panel1.add(id);
+        id.setBounds(175, 72, 220, 25);
+
+        JButton search = new JButton("SEARCH");
+        panel1.add(search);
+        search.setBounds(125, 130, 85, 20);
+        search.setBackground(new Color(182, 223, 248));
+        search.addActionListener(submit);
+
+        JButton refresh = new JButton("CLEAR");
+        panel1.add(refresh);
+        refresh.setBounds(300, 130, 85, 20);
+        refresh.setBackground(new Color(182, 223, 248));
+        refresh.addActionListener(clear);
+
+
+    }
+
+    ActionListener submit = new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            if (id.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "ENTER A VALID ID", "GETID", JOptionPane.ERROR_MESSAGE);
+            } else {
+                add(panel);
+                panel.setBounds(512, 270, 500, 500);
+                panel.setBackground(new Color(55, 55, 55,200));
+                panel.setLayout(null);
+
+                JLabel header = new JLabel("UPDATE CASHIER");
+                panel.add(header);
+                header.setFont(new Font("Ariel", Font.BOLD, 20));
+                header.setBounds(165, 20, 1000, 50);
+                header.setBackground(new Color(182, 223, 248));
+                header.setForeground(new Color(0x80));
+                header.setOpaque(true);
+                JLabel head = new JLabel(".");
+                panel.add(head);
+                head.setFont(new Font("Ariel", Font.BOLD, 1));
+                head.setBounds(0, 20, 1000, 50);
+                head.setBackground(new Color(182, 223, 248));
+                head.setOpaque(true);
+
+                JLabel label3 = new JLabel("USERNAME:");
+                panel.add(label3);
+                label3.setFont(new Font("Ariel", Font.BOLD, 20));
+                label3.setBounds(30, 100, 200, 25);
+                label3.setForeground(new Color(182, 223, 248));
+
+                JTextField c = new JTextField();
+                panel.add(c);
+                c.setBounds(200, 100, 200, 25);
+                c.setFont(new Font("Ariel", Font.BOLD, 15));
+                c.setForeground(Color.BLACK);
+                c.setBackground(new Color(182, 223, 248));
+
+                JLabel label1 = new JLabel("CASHIER ID:");
+                panel.add(label1);
+                label1.setFont(new Font("Ariel", Font.BOLD, 20));
+                label1.setBounds(30, 150, 200, 25);
+                label1.setForeground(new Color(182, 223, 248));
+
+                JTextField csh = new JTextField();
+                panel.add(csh);
+                csh.setBounds(200, 150, 200, 25);
+                csh.setFont(new Font("Ariel", Font.BOLD, 15));
+                csh.setForeground(Color.BLACK);
+                csh.setBackground(new Color(182, 223, 248));
+
+                JLabel label4 = new JLabel("PASSWORD:");
+                panel.add(label4);
+                label4.setBounds(30, 200, 200, 25);
+                label4.setFont(new Font("ariel", Font.BOLD, 20));
+                label4.setForeground(new Color(182, 223, 248));
+
+                JTextField jk = new JTextField();
+                panel.add(jk);
+                jk.setBounds(200, 200, 200, 25);
+                jk.setFont(new Font("Ariel", Font.BOLD, 15));
+                jk.setForeground(Color.BLACK);
+                jk.setBackground(new Color(182, 223, 248));
+
+                JLabel label5 = new JLabel("DATEOFBIRTH:");
+                panel.add(label5);
+                label5.setBounds(30, 250, 200, 25);
+                label5.setFont(new Font("ariel", Font.BOLD, 20));
+                label5.setForeground(new Color(182, 223, 248));
+
+                JTextField jkk = new JTextField();
+                panel.add(jkk);
+                jkk.setBounds(200, 250, 200, 25);
+                jkk.setFont(new Font("Ariel", Font.BOLD, 15));
+                jkk.setForeground(Color.BLACK);
+                jkk.setBackground(new Color(182, 223, 248));
+
+                JLabel label6 = new JLabel("PHONE NO:");
+                panel.add(label6);
+                label6.setBounds(30, 300, 200, 25);
+                label6.setFont(new Font("ariel", Font.BOLD, 20));
+                label6.setForeground(new Color(182, 223, 248));
+
+                JTextField j = new JTextField();
+                panel.add(j);
+                j.setBounds(200, 300, 200, 25);
+                j.setFont(new Font("Ariel", Font.BOLD, 15));
+                j.setForeground(Color.BLACK);
+                j.setBackground(new Color(182, 223, 248));
+
+
+                JButton butt = new JButton("DONE");
+                panel.add(butt);
+                butt.setBounds(195, 380, 100, 40);
+                butt.setBackground(new Color(182, 223, 248));
+                butt.setForeground(new Color(0x80));
+            }
+        }
+    };
+    ActionListener clear = new ActionListener(){
+        public void actionPerformed(ActionEvent e){
+            id.setText("");
+
+            if (panel != null) {
+                panel.removeAll();
+                remove(panel);
+                revalidate();
+                repaint();
+            }
+        }
+    };
+}
+
+    public class updatecashier {
+        public static void main(String[] args) {
+
+            new updatecashie();
+
+        }
+
+    }
+
+
+
+
