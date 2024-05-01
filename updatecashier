@@ -99,31 +99,20 @@ class updatecashie extends JFrame {
                 head.setBackground(new Color(182, 223, 248));
                 head.setOpaque(true);
 
-                JLabel label3 = new JLabel("USERNAME:");
-                panel.add(label3);
-                label3.setFont(new Font("Ariel", Font.BOLD, 20));
-                label3.setBounds(30, 100, 200, 25);
-                label3.setForeground(new Color(182, 223, 248));
 
-                JTextField c = new JTextField();
-                panel.add(c);
-                c.setBounds(200, 100, 200, 25);
-                c.setFont(new Font("Ariel", Font.BOLD, 15));
-                c.setForeground(Color.BLACK);
-                c.setBackground(new Color(182, 223, 248));
 
-                JLabel label1 = new JLabel("CASHIER ID:");
+                JLabel label1 = new JLabel("USERNAME");
                 panel.add(label1);
                 label1.setFont(new Font("Ariel", Font.BOLD, 20));
                 label1.setBounds(30, 150, 200, 25);
                 label1.setForeground(new Color(182, 223, 248));
 
-                JTextField csh = new JTextField();
-                panel.add(csh);
-                csh.setBounds(200, 150, 200, 25);
-                csh.setFont(new Font("Ariel", Font.BOLD, 15));
-                csh.setForeground(Color.BLACK);
-                csh.setBackground(new Color(182, 223, 248));
+                JTextField user_name = new JTextField();
+                panel.add(user_name);
+                user_name.setBounds(200, 150, 200, 25);
+                user_name.setFont(new Font("Ariel", Font.BOLD, 15));
+                user_name.setForeground(Color.BLACK);
+                user_name.setBackground(new Color(182, 223, 248));
 
                 JLabel label4 = new JLabel("PASSWORD:");
                 panel.add(label4);
@@ -131,12 +120,12 @@ class updatecashie extends JFrame {
                 label4.setFont(new Font("ariel", Font.BOLD, 20));
                 label4.setForeground(new Color(182, 223, 248));
 
-                JTextField jk = new JTextField();
-                panel.add(jk);
-                jk.setBounds(200, 200, 200, 25);
-                jk.setFont(new Font("Ariel", Font.BOLD, 15));
-                jk.setForeground(Color.BLACK);
-                jk.setBackground(new Color(182, 223, 248));
+                JTextField pass_word = new JTextField();
+                panel.add(pass_word);
+                pass_word.setBounds(200, 200, 200, 25);
+                pass_word.setFont(new Font("Ariel", Font.BOLD, 15));
+                pass_word.setForeground(Color.BLACK);
+                pass_word.setBackground(new Color(182, 223, 248));
 
                 JLabel label5 = new JLabel("DATEOFBIRTH:");
                 panel.add(label5);
@@ -144,12 +133,12 @@ class updatecashie extends JFrame {
                 label5.setFont(new Font("ariel", Font.BOLD, 20));
                 label5.setForeground(new Color(182, 223, 248));
 
-                JTextField jkk = new JTextField();
-                panel.add(jkk);
-                jkk.setBounds(200, 250, 200, 25);
-                jkk.setFont(new Font("Ariel", Font.BOLD, 15));
-                jkk.setForeground(Color.BLACK);
-                jkk.setBackground(new Color(182, 223, 248));
+                JTextField dob = new JTextField();
+                panel.add(dob);
+                dob.setBounds(200, 250, 200, 25);
+                dob.setFont(new Font("Ariel", Font.BOLD, 15));
+                dob.setForeground(Color.BLACK);
+                dob.setBackground(new Color(182, 223, 248));
 
                 JLabel label6 = new JLabel("PHONE NO:");
                 panel.add(label6);
@@ -157,12 +146,12 @@ class updatecashie extends JFrame {
                 label6.setFont(new Font("ariel", Font.BOLD, 20));
                 label6.setForeground(new Color(182, 223, 248));
 
-                JTextField j = new JTextField();
-                panel.add(j);
-                j.setBounds(200, 300, 200, 25);
-                j.setFont(new Font("Ariel", Font.BOLD, 15));
-                j.setForeground(Color.BLACK);
-                j.setBackground(new Color(182, 223, 248));
+                JTextField phone_no = new JTextField();
+                panel.add(phone_no);
+                phone_no.setBounds(200, 300, 200, 25);
+                phone_no.setFont(new Font("Ariel", Font.BOLD, 15));
+                phone_no.setForeground(Color.BLACK);
+                phone_no.setBackground(new Color(182, 223, 248));
 
 
                 JButton butt = new JButton("DONE");
