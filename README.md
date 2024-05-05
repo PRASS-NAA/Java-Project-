@@ -15,14 +15,16 @@ create table Cashier(id int primary key,username varchar(20) unique,password var
 
 -- PRODUCTS --
  CREATE TABLE products (
-    ->     batch_id VARCHAR(30),
-    ->     product_id INT AUTO_INCREMENT PRIMARY KEY,
-    ->     price INT,
-    ->     quantity INT,
-    ->     sold_quantity INT DEFAULT 0,
-    ->     INDEX idx_batch_id (batch_id), -- Add index on batch_id
-    ->     INDEX idx_product_id (product_id) -- Add index on product_id
-    -> );
+    batch_id VARCHAR(30),
+    product_id INT,
+    prodname VARCHAR(30),
+    price INT,
+    quantity INT,
+    sold_quantity INT DEFAULT 0,
+    INDEX idx_batch_id (batch_id),
+    INDEX idx_product_id (product_id)
+);
+
 
 -- BILL --
 create table bill(bill_id int primary key AUTO_INCREMENT,cashier_id int,bill_date DATE, foreign key (cashier_id)references cashier(id));
@@ -42,14 +44,14 @@ create table bill(bill_id int primary key AUTO_INCREMENT,cashier_id int,bill_dat
 
 -- SALES DETAILS --
  CREATE TABLE salesdetails (
-    ->     sales_details_id INT AUTO_INCREMENT PRIMARY KEY,
-    ->     stransid INT,
-    ->     batch_id VARCHAR(30),
-    ->     product_id INT,
-    ->     quantity INT,
-    ->     FOREIGN KEY (stransid) REFERENCES salesmaster(stransid),
-    ->     FOREIGN KEY (product_id) REFERENCES products(product_id),
-    ->     FOREIGN KEY (batch_id) REFERENCES products(batch_id),
-    ->     INDEX idx_batch_id (batch_id), -- Add index on batch_id
-    ->     INDEX idx_product_id (product_id) -- Add index on product_id
-    -> );
+    sales_details_id INT AUTO_INCREMENT PRIMARY KEY,
+    stransid INT,
+    batch_id VARCHAR(30),
+    product_id INT,
+    quantity INT,
+    FOREIGN KEY (stransid) REFERENCES salesmaster(stransid),
+    FOREIGN KEY (product_id) REFERENCES products(product_id),
+    FOREIGN KEY (batch_id) REFERENCES products(batch_id),
+    INDEX idx_batch_id (batch_id),
+    INDEX idx_product_id (product_id)
+);
