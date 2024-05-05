@@ -1,0 +1,164 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import com.toedter.calendar.JDateChooser;
+
+
+
+
+class member extends JFrame{
+    member()
+    {
+
+        JLabel img = new JLabel();
+        img.setIcon(new ImageIcon(new ImageIcon("C:\\wp\\hk.jpg").getImage().getScaledInstance(1800, 900, Image.SCALE_SMOOTH)));
+        setContentPane(img);
+        setVisible(true);
+        setSize(1600,1600);
+        setResizable(false);
+
+        JPanel panel =new JPanel();
+
+
+
+        panel.setBounds(500, 200, 550, 500);
+        panel.setBackground(new Color(0,0,11));
+        add(panel);
+        panel.setLayout(null);
+
+        JLabel head = new JLabel("MEMBERSHIP");
+        panel.add(head);
+        head.setBounds(165,15,400,25);
+        head.setFont(new Font("snap itc",Font.BOLD,25));
+        head.setForeground(Color.cyan);
+
+        JLabel name1 = new JLabel("NAME:");
+        panel.add(name1);
+        name1.setFont(new Font("ariel",Font.BOLD,20));
+        name1.setForeground(Color.cyan);
+        name1.setBounds(50,100,100,25);
+
+        JTextField name = new JTextField();
+        panel.add(name);
+        name.setBounds(170,100,200,25);
+        name.setBackground(Color.WHITE);
+        name.setForeground(Color.black);
+        name.setFont(new Font("ariel",Font.ITALIC,20));
+
+
+        JLabel age1 = new JLabel("AGE:");
+        panel.add(age1);
+        age1.setFont(new Font("ariel",Font.BOLD,20));
+        age1.setForeground(Color.cyan);
+        age1.setBounds(50,180,100,25);
+
+        JDateChooser age = new JDateChooser();
+        age.setDateFormatString("dd/MM/yyyy");
+        panel.add(age);
+        age.setForeground(Color.CYAN);
+        age.setBounds(170,174,200,40);
+
+        JLabel pn = new JLabel();
+        panel.add(pn);
+        pn.setText("NUMBER:");
+        pn.setFont(new Font("ariel",Font.BOLD,20));
+        pn.setForeground(Color.cyan);
+        pn.setBounds(50,260,100,25);
+        final String n= "+91";
+        JTextField numb = new JTextField(n,3);
+        panel.add(numb);
+        numb.setFont(new Font("ariel",Font.BOLD,20));
+        numb.setBounds(170,260,40,25);
+
+        JTextField number = new JTextField(10);
+        panel.add(number);
+        number.setFont(new Font("ariel",Font.BOLD,20));
+        number.setBounds(220,260,150,25);
+
+        JButton button = new JButton("SUBMIT");
+        panel.add(button);
+        button.setBounds(210,370,120,35);
+
+
+        panel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                // Change the border color to simulate glowing effect
+                panel.setBorder(BorderFactory.createLineBorder(Color.cyan, 3));
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                // Remove the border when mouse exits to revert to normal appearance
+                panel.setBorder(null);
+            }
+        });
+        button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                // Change the border color to simulate glowing effect
+                button.setBorder(BorderFactory.createLineBorder(Color.cyan, 3));
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                // Remove the border when mouse exits to revert to normal appearance
+                button.setBorder(null);
+            }
+        });
+        name.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                // Change the border color to simulate glowing effect
+                name.setBorder(BorderFactory.createLineBorder(Color.cyan, 3));
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                // Remove the border when mouse exits to revert to normal appearance
+                name.setBorder(null);
+            }
+        });
+        number.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                // Change the border color to simulate glowing effect
+                number.setBorder(BorderFactory.createLineBorder(Color.cyan, 3));
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                // Remove the border when mouse exits to revert to normal appearance
+                number.setBorder(null);
+            }
+        });
+        numb.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                // Change the border color to simulate glowing effect
+                numb.setBorder(BorderFactory.createLineBorder(Color.cyan, 3));
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                // Remove the border when mouse exits to revert to normal appearance
+                numb.setBorder(null);
+            }
+        });
+
+    }
+
+}
+
+public class membership {
+    public static void main(String[] args) {
+
+
+        new member();
+    }
+}
