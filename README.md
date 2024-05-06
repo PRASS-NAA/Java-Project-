@@ -55,3 +55,14 @@ create table bill(bill_id int primary key AUTO_INCREMENT,cashier_id int,bill_dat
     INDEX idx_batch_id (batch_id),
     INDEX idx_product_id (product_id)
 );
+
+-- CUSTOMER -- 
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| phone_no | varchar(15) | NO   | PRI | NULL    |       |
+| cname    | varchar(20) | YES  |     | NULL    |       |
+| points   | int         | YES  |     | 0       |       |
+| ismember | varchar(5)  | YES  |     | NO      |       |
+| dob      | date        | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
