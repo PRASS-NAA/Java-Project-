@@ -1,17 +1,17 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import com.toedter.calendar.JDateChooser;
+import java.text.ParseException;
+import javax.swing.text.MaskFormatter;
 
 
 
 
 class member extends JFrame{
-    member()
-    {
+    member() throws ParseException {
 
         JLabel img = new JLabel();
-        img.setIcon(new ImageIcon(new ImageIcon("C:\\wp\\hk.jpg").getImage().getScaledInstance(1800, 900, Image.SCALE_SMOOTH)));
+        img.setIcon(new ImageIcon(new ImageIcon("C:\\wp\\1686249416_en-idei-club-p-light-blue-color-background-dizain-krasivo-6.jpg").getImage().getScaledInstance(1800, 900, Image.SCALE_SMOOTH)));
         setContentPane(img);
         setVisible(true);
         setSize(1600,1600);
@@ -21,15 +21,15 @@ class member extends JFrame{
 
 
 
-        panel.setBounds(500, 200, 550, 500);
-        panel.setBackground(new Color(0,0,11));
+        panel.setBounds(490, 170, 550, 500);
+        panel.setBackground(new Color(55,55,55));
         add(panel);
         panel.setLayout(null);
 
         JLabel head = new JLabel("MEMBERSHIP");
         panel.add(head);
-        head.setBounds(165,15,400,25);
-        head.setFont(new Font("snap itc",Font.BOLD,25));
+        head.setBounds(190,20,400,25);
+        head.setFont(new Font("ariel",Font.BOLD,25));
         head.setForeground(Color.cyan);
 
         JLabel name1 = new JLabel("NAME:");
@@ -51,12 +51,36 @@ class member extends JFrame{
         age1.setFont(new Font("ariel",Font.BOLD,20));
         age1.setForeground(Color.cyan);
         age1.setBounds(50,180,100,25);
+        try {
+            MaskFormatter formatter = new MaskFormatter("##-##-####");
+            JFormattedTextField dateField = new JFormattedTextField(formatter);
+            dateField.setColumns(10);
+            dateField.setBounds(170, 180, 200, 25);
+            panel.add(dateField);
+            dateField.setFont(new Font("Ariel",Font.ITALIC,20));
+            dateField.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseEntered(MouseEvent e) {
+                    // Change the border color to simulate glowing effect
+                    dateField.setBorder(BorderFactory.createLineBorder(Color.cyan, 3));
 
-        JDateChooser age = new JDateChooser();
-        age.setDateFormatString("dd/MM/yyyy");
-        panel.add(age);
-        age.setForeground(Color.CYAN);
-        age.setBounds(170,174,200,40);
+                }
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    // Remove the border when mouse exits to revert to normal appearance
+                    dateField.setBorder(null);
+                }
+            });
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        // age = new JDateChooser();
+        //age.setDateFormatString("dd/MM/yyyy");
+        //panel.add(age);
+        //age.setForeground(Color.CYAN);
+        //age.setBounds(170,174,200,40);
 
         JLabel pn = new JLabel();
         panel.add(pn);
@@ -122,6 +146,7 @@ class member extends JFrame{
                 name.setBorder(null);
             }
         });
+
         number.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -159,6 +184,10 @@ public class membership {
     public static void main(String[] args) {
 
 
-        new member();
+        try {
+            new member();
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
