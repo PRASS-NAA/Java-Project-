@@ -9,6 +9,8 @@ import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.text.Document;
+import javax.swing.ImageIcon;
+
 
 
 
@@ -45,11 +47,24 @@ class newbilling extends JFrame
         setVisible(true);
         setBackground(new Color(255, 253, 208));
 
+
+
+
         panel = new JPanel();
         panel.setBounds(0,120,1920,980);
         panel.setLayout(null);
         panel.setBackground(new Color(251, 241, 152));
         add(panel);
+
+        ImageIcon logoIcon = new ImageIcon("C:\\Users\\hp\\Desktop\\javaproject\\login\\src\\bms\\billing.png");
+        JLabel logo = new JLabel(logoIcon);
+        panel.add(logo);
+        logo.setBounds(25,20,60,60);
+
+        ImageIcon logogif = new ImageIcon("C:\\Users\\hp\\Desktop\\javaproject\\login\\src\\bms\\Billing ani.gif");
+        JLabel logoani = new JLabel(logogif);
+        panel.add(logoani);
+        logoani.setBounds(100,5,286,108);
 
         date = new JLabel("DATE:     " + LocalDate.now());
         panel.add(date);
@@ -236,13 +251,13 @@ class newbilling extends JFrame
         savebtn.setBounds(1300, 355, 120, 25);
         savebtn.setFont(new Font("Tahoma", 1, 14));
 
-       testbtn = new JButton();
+       /*testbtn = new JButton();
         panel.add(testbtn);
         testbtn.setIcon(new ImageIcon("C:\\Users\\hp\\Desktop\\javaproject\\login\\src\\bms\\save.png"));
         testbtn.setText("test");
         testbtn.setBackground(new Color(148, 93, 243, 211));
         testbtn.setBounds(1300, 300, 120, 25);
-        testbtn.setFont(new Font("Tahoma", 1, 14));
+        testbtn.setFont(new Font("Tahoma", 1, 14));*/
 
         resetbtn = new JButton();
         panel.add(resetbtn);
