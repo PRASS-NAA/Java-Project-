@@ -1,0 +1,60 @@
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| id       | int         | NO   | PRI | NULL    |       |
+| username | varchar(30) | NO   |     | NULL    |       |
+| password | varchar(30) | NO   |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| username | varchar(20)  | YES  | UNI | NULL    |                |
+| cname    | varchar(30)  | YES  |     | NULL    |                |
+| phoneno  | varchar(12)  | YES  |     | NULL    |                |
+| id       | int          | NO   | PRI | NULL    | auto_increment |
+| password | varchar(100) | YES  |     | NULL    |                |
+| mail     | varchar(30)  | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| batch_id      | varchar(30) | YES  | MUL | NULL    |       |
+| product_id    | int         | YES  | MUL | NULL    |       |
+| prodname      | varchar(30) | YES  |     | NULL    |       |
+| price         | int         | YES  |     | NULL    |       |
+| quantity      | int         | YES  |     | NULL    |       |
+| sold_quantity | int         | YES  |     | 0       |       |
+| expiry        | date        | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| phone_no | varchar(15) | NO   | PRI | NULL    |       |
+| cname    | varchar(20) | YES  |     | NULL    |       |
+| points   | int         | YES  |     | 0       |       |
+| ismember | varchar(5)  | YES  |     | NO      |       |
+| dob      | date        | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| stransid   | int         | NO   | PRI | NULL    | auto_increment |
+| phoneno    | varchar(15) | YES  | MUL | NULL    |                |
+| salesamt   | int         | YES  |     | NULL    |                |
+| stransdate | date        | YES  |     | NULL    |                |
+| cashier_id | int         | YES  | MUL | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+
++------------------+-------------+------+-----+---------+----------------+
+| Field            | Type        | Null | Key | Default | Extra          |
++------------------+-------------+------+-----+---------+----------------+
+| sales_details_id | int         | NO   | PRI | NULL    | auto_increment |
+| stransid         | int         | YES  | MUL | NULL    |                |
+| batch_id         | varchar(30) | YES  | MUL | NULL    |                |
+| product_id       | int         | YES  | MUL | NULL    |                |
+| quantity         | int         | YES  |     | NULL    |                |
++------------------+-------------+------+-----+---------+----------------+
