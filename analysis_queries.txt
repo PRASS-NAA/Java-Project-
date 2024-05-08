@@ -1,0 +1,45 @@
+Total sales amount for a specific month:
+
+
+SELECT SUM(salesamt) AS total_sales
+FROM salesmaster
+WHERE MONTH(stransdate) = 05
+AND YEAR(stransdate) = 2024;
+
+
+Highest selling product:
+
+
+SELECT p.prodname, SUM(sd.quantity) AS total_quantity_sold
+FROM salesdetails sd
+JOIN products p ON sd.product_id = p.product_id
+JOIN salesmaster sm ON sd.stransid = sm.stransid
+WHERE MONTH(sm.stransdate) = 05
+AND YEAR(sm.stransdate) = 2024
+GROUP BY p.prodname
+ORDER BY total_quantity_sold DESC
+LIMIT 1;
+
+Lowest selling product:
+
+SELECT p.prodname, SUM(sd.quantity) AS total_quantity_sold
+FROM salesdetails sd
+JOIN products p ON sd.product_id = p.product_id
+JOIN salesmaster sm ON sd.stransid = sm.stransid
+WHERE MONTH(sm.stransdate) = 05
+AND YEAR(sm.stransdate) = 2024
+GROUP BY p.prodname
+ORDER BY total_quantity_sold ASC
+LIMIT 1;
+
+
+Customer with highest points and lowest points
+
+SELECT cname, points FROM customer WHERE points = (SELECT MAX(points) FROM customer);  -- highest
+
+SELECT cname, points FROM customer WHERE points = (SELECT MIN(points) FROM customer);  -- lowest
+
+
+
+
+
