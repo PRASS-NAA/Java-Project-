@@ -33,13 +33,30 @@ ORDER BY total_quantity_sold ASC
 LIMIT 1;
 
 
-Customer with highest points and lowest points
+Customer with highest points and lowest points:
 
 SELECT cname, points FROM customer WHERE points = (SELECT MAX(points) FROM customer);  -- highest
 
 SELECT cname, points FROM customer WHERE points = (SELECT MIN(points) FROM customer);  -- lowest
 
 
+Total Analysis for a specific product:
 
+SELECT
+    p.prodname AS ProductName,
+    SUM(sd.quantity) AS TotalQuantitySold,
+    SUM(sd.quantity * p.price) AS TotalSalesAmount,
+    MAX(sm.stransdate) AS HighestSellingDate,
+    MIN(sm.stransdate) AS LowestSellingDate
+FROM
+    salesdetails sd
+    JOIN products p ON sd.product_id = p.product_id
+    JOIN salesmaster sm ON sd.stransid = sm.stransid
+WHERE
+    p.prodname = 'coke'
+    AND MONTH(sm.stransdate) = 05
+    AND YEAR(sm.stransdate) = 2024
+GROUP BY
+    p.prodname;
 
 
