@@ -57,3 +57,13 @@
 | product_id       | int         | YES  | MUL | NULL    |                |
 | quantity         | int         | YES  |     | NULL    |                |
 +------------------+-------------+------+-----+---------+----------------+
+
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| phone_no | varchar(15) | NO   | PRI | NULL    |       |
+| cname    | varchar(20) | YES  |     | NULL    |       |
+| points   | int         | YES  |     | 0       |       |
+| ismember | varchar(5)  | YES  |     | NO      |       |
+| dob      | date        | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
