@@ -25,10 +25,9 @@
 | prodname      | varchar(30) | YES  |     | NULL    |       |
 | price         | int         | YES  |     | NULL    |       |
 | quantity      | int         | YES  |     | NULL    |       |
-| sold_quantity | int         | YES  |     | 0       |       |
 | expiry        | date        | YES  |     | NULL    |       |
+| reorder_level | int         | YES  |     | 50      |       |
 +---------------+-------------+------+-----+---------+-------+
-
 +----------+-------------+------+-----+---------+-------+
 | Field    | Type        | Null | Key | Default | Extra |
 +----------+-------------+------+-----+---------+-------+
