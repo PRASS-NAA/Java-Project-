@@ -66,4 +66,4 @@ create table bill(bill_id int primary key AUTO_INCREMENT,cashier_id int,bill_dat
 | ismember | varchar(5)  | YES  |     | NO      |       |
 | dob      | date        | YES  |     | NULL    |       |
 +----------+-------------+------+-----+---------+-------+
-.
+./
